@@ -10,6 +10,7 @@ app.set('view engine', 'hbs');
 //     //res.send('Hola Mundo')
 
 //     let salida = {
+
 //         nombre: 'Juan Sala',
 //         edad: 25,
 //         url: req.url
