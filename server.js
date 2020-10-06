@@ -6,17 +6,16 @@ app.use(express.static(__dirname + '/public'))
 
 app.set('view engine', 'hbs');
 
-// app.get('/', (req, res) => {
-//     //res.send('Hola Mundo')
+app.get('/', (req, res) => {
 
-//     let salida = {
+    res.render('home', {
+        nombre: 'Daniela',
+        anio: new Date().getFullYear()
 
-//         nombre: 'Juan Sala',
-//         edad: 25,
-//         url: req.url
-//     }
-//     res.send(JSON.stringify(salida))
-// })
+    });
+});
+
+
 app.get('/data', (req, res) => {
     res.send('Hola DATA')
 
