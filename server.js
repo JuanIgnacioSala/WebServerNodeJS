@@ -3,6 +3,7 @@ const app = express()
 const hbs = require('hbs');
 require('./hbs/helpers')
 
+const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'))
 
@@ -15,28 +16,18 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
     res.render('home', {
         nombre: 'Daniela',
-
     });
-
 });
 
 app.get('/about', (req, res) => {
-
-    res.render('about', {
-
-
-
-    });
-
+    res.render('about', {});
 });
 
 
 app.get('/data', (req, res) => {
     res.send('Hola DATA')
-
-
 })
 
-app.listen(3000, () => {
-    console.log('Escuchando to lo que llega al puerto 3000');
+app.listen(port, () => {
+    console.log(`Escuchando to lo que llega al puerto ${ port }`);
 })
